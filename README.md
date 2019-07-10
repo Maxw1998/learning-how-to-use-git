@@ -28,3 +28,12 @@ $ git remote add origin git@github.com:tianqixin/runoob-git-test.git
 $ git push -u origin master
 ```
 
+#### 提交文件
+
+* 第一步：使用命令 git add readme.txt添加到暂存区里面去。
+* 第二步：用命令 git commit告诉Git，把文件提交到仓库。     //git commit -m "内容"
+                  我们下面可以通过命令git status来查看是否还有文件未提交，
+                  使用git diff readme.txt 看下readme.txt文件到底改了什么内容
+* 第三步：用命令 git push 更新github
+                  知道了对readme.txt文件做了什么修改后，我们可以放心的提交到仓库了，
+                  提交修改和提交文件是一样的2步(第一步是git add 第二步是：git commit，中间可以用git status检查)。
