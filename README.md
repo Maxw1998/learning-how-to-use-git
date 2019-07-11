@@ -1,14 +1,14 @@
 # learning-how-to-use-git
 #### 准备工作
 
-* Git 使用 git init 命令来初始化一个 Git 仓库   使用当前目录作为Git仓库，我们只需使它初始化。 生成 .git 文件
+* Git 使用 `git init` 命令来初始化一个 Git 仓库   使用当前目录作为Git仓库，我们只需使它初始化。 生成` .git `文件
 
-* 使用以下命令生成 SSH Key：   $ ssh-keygen -t rsa -C "youremail@example.com"
+* 使用以下命令生成 SSH Key：   `$ ssh-keygen -t rsa -C "youremail@example.com"`
 
-* 成功的话会在 ~/ 下生成 .ssh 文件夹，进去，打开 id_rsa.pub，复制里面的 key，填入github中
+* 成功的话会在 ~/ 下生成` .ssh` 文件夹，进去，打开` id_rsa.pub`，复制里面的 key，填入github中
 
-* 为了验证是否成功，在git bash下输入：  $ ssh -T git@github.com
-* 如果是第一次的会提示是否continue，输入yes就会看到：You've successfully authenticated, but GitHub does not provide shell access 。这就表示已成功连上github。
+* 为了验证是否成功，在git bash下输入： ` $ ssh -T git@github.com`
+* 如果是第一次的会提示是否continue，输入yes就会看到：`You've successfully authenticated, but GitHub does not provide shell access` 。这就表示已成功连上github。
 
 ```git
 $ mkdir runoob-git-test                     # 创建测试目录
@@ -30,10 +30,25 @@ $ git push -u origin master
 
 #### 提交文件
 
-* 第一步：使用命令 git add readme.txt添加到暂存区里面去。
-* 第二步：用命令 git commit告诉Git，把文件提交到仓库。     //git commit -m "内容"
-                  我们下面可以通过命令git status来查看是否还有文件未提交，
-                  使用git diff readme.txt 看下readme.txt文件到底改了什么内容
-* 第三步：用命令 git push 更新github
+* 第一步：使用命令 `git add readme.md`添加到暂存区里面去。
+
+* 第二步：用命令 `git commit`告诉Git，把文件提交到仓库。     //git commit -m "内容"
+                  我们下面可以通过命令`git status`来查看是否还有文件未提交，
+                  使用`git diff readme.md `看下`readme.md`文件到底改了什么内容
+              
+* 第三步：用命令` git push `更新github
                   知道了对readme.txt文件做了什么修改后，我们可以放心的提交到仓库了，
-                  提交修改和提交文件是一样的2步(第一步是git add 第二步是：git commit，中间可以用git status检查)。
+                  提交修改和提交文件是一样的2步(第一步是`git add `第二步是：`git commit`，中间可以用`git status`检查)。
+              
+              
+              
+#### 版本回退
+
+* 想查看下历史记录，如何查呢？我们现在可以使用命令 `git log `
+  如果嫌显示的信息太多的话，我们可以使用命令 `git log –pretty=oneline`
+* 我想把当前的版本回退到上一个版本，可以使用如下2种命令，
+  第一种 是：`git reset --hard HEAD^` 那么如果要回退到上上个版本只需把`HEAD^ `改成 `HEAD^^ `以此类推。
+  第二种 那如果要回退到前100个版本的话,我们可以使用下面的简便命令操作：`git reset --hard HEAD~100` 即可。
+* 可以通过 `cat textme.md` 查看文件内容 但是现在我想回退到最新的版本，我们可以通过版本号回退，使用命令方法如下：`git reset --hard` 版本号
+  可以通过如下命令即可获取到版本号：`git reflog `
+  再用` cat` 命令查看内容
