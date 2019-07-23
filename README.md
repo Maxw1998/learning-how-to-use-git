@@ -80,5 +80,10 @@ $ git push -u origin master
   ​	首先在做撤销之前，我们可以先用 git status 查看下当前的状态。如下所示：
   ​	可以发现，Git会告诉你，git checkout -- file 可以丢弃工作区的修改
   ​    git checkout -- readme.txt
-
   
+* 二 删除文件：
+   一般情况下，可以直接在文件目录中把文件删了，或者使用如上rm命令：rm b.txt ，
+
+   果我想彻底从版本库中删掉了此文件的话，可以再执行commit命令提交掉
+
+   只要没有commit之前，如果我想在版本库中恢复此文件，可以使用如下命令 git checkout -- b.txt
