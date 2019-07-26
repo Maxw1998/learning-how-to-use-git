@@ -69,7 +69,7 @@ $ git push -u origin master
 ​        第二步：使用git commit提交更改，实际上就是把暂存区的 所有内容 提交到当前分支上。(包括修改和新建文件 都一次性提交)
 
 #### Git撤销修改和删除文件操作 
-* 一 撤销修改：
+* 一  撤销修改：
   	在我未提交之前，我发现添加的内容有误，所以我得马上恢复以前的版本，现在我可以有如下几种方法可以做修改：
 
   ​	第一：如果我知道要删掉那些内容的话，直接手动更改去掉那些需要的文件，然后add添加到暂存区，最后commit掉。
@@ -81,9 +81,21 @@ $ git push -u origin master
   ​	可以发现，Git会告诉你，git checkout -- file 可以丢弃工作区的修改
   ​    git checkout -- readme.txt
   
-* 二 删除文件：
+* 二  删除文件：
    一般情况下，可以直接在文件目录中把文件删了，或者使用如上rm命令：rm b.txt ，
 
    果我想彻底从版本库中删掉了此文件的话，可以再执行commit命令提交掉
 
    只要没有commit之前，如果我想在版本库中恢复此文件，可以使用如下命令 git checkout -- b.txt
+
+#### 远程仓库
+
+* 一  通过本地库到远程库
+  git remote add origin https:// ..... 命令 
+
+  再使用 git push -u origin master 命令 把本地库推送到远程
+
+  之后 只要是本地提交 就直接通过 git push origin master 命令 把本地master分支的最新修改推送到github上
+
+* 二  如何从远程库克隆
+  git clone https://.....  命令
