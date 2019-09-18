@@ -99,3 +99,6 @@ $ git push -u origin master
 
 * 二  如何从远程库克隆
   git clone https://.....  命令
+
+#### 分支管理
+
