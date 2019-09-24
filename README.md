@@ -28,6 +28,36 @@ $ git remote add origin git@github.com:tianqixin/runoob-git-test.git
 $ git push -u origin master
 ```
 
+#### 本地连接
+
+​	1.使用git clone命令将新建的git 项目信息下载到本地
+
+```git
+git clone  git address
+```
+
+​	2.进入git项目的本地文件夹，将自己的项目复制到这个git 文件夹，查看状态，提交所有的新文件
+
+```git
+git status 
+git add -A
+git commit -a -m"first commit"
+```
+
+​	3.上传更新到git 版本库
+
+```
+git push
+```
+
+注：git add上传本地项目所有变化的命令三种有 git add -A、git add -u、git add .
+
+```git
+git add -A  提交所有变化
+git add -u  提交被修改(modified)和被删除(deleted)文件，不包括新文件(new)
+git add .  提交新文件(new)和被修改(modified)文件，不包括被删除(deleted)文件
+```
+
 #### 提交文件
 
 * 第一步：使用命令 `git add readme.md`添加到暂存区里面去。
